@@ -5,11 +5,12 @@ import { Submissions } from '../api/submissions.js';
 
 import Header from './Header.jsx';
 import MediaSubmission from './MediaSubmission.jsx';
+import Submission from './Submission.jsx';
 
 class App extends Component {
   renderSubmissions() {
     return this.props.submissions.map((submission) => (
-      <Submission key={task._id} submission={submission} />
+      <Submission key={submission._id} submission={submission} />
     ));
   }
 
@@ -18,6 +19,10 @@ class App extends Component {
       <div>
         <Header />
         <MediaSubmission />
+        
+        <ul>
+          {this.renderSubmissions()}
+        </ul>
       </div>
     );
   }
