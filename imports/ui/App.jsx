@@ -20,7 +20,7 @@ class App extends Component {
         <Header />
         <MediaSubmission />
         
-        <ul>
+        <ul className="submission-list">
           {this.renderSubmissions()}
         </ul>
       </div>

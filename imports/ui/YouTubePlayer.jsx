@@ -6,8 +6,8 @@ export default class YouTubePlayer extends Component {
   render() {
 
     const opts = {
-      height: '504',
-      width: '896',
+      height: '360',
+      width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 0
       }
@@ -25,7 +25,6 @@ export default class YouTubePlayer extends Component {
   }
 
   _onReady(event) {
-    console.log('YouTubePlayer component ready');
     // access to player in all event handlers via event.target
     // For example:
     // event.target.pauseVideo();
