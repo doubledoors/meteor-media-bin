@@ -20,7 +20,7 @@ class App extends Component {
         <Header />
         <SubmitMedia />
         
-        <ul className="submission-list">
+        <ul className="App__submission-list">
           {this.renderSubmissions()}
         </ul>
       </div>
@@ -34,6 +34,6 @@ App.propTypes = {
 
 export default createContainer(() => {
   return {
-    submissions: Submissions.find({}).fetch(),
+    submissions: Submissions.find({}, { sort: { createdAt: -1 } }).fetch(),
   };
 }, App);

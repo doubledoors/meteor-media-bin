@@ -8,8 +8,8 @@ export default class Submission extends Component {
   }
   render() {
     return (
-      <li>
-        <YouTubePlayer videoId={this.props.submission.id} />
+      <li className="Submission">
+        <YouTubePlayer videoId={this.props.submission.ytv_id} />
       </li>
     );
   }
