@@ -4,7 +4,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Submissions } from '../api/submissions.js';
 
 import Header from './Header.jsx';
-import MediaSubmission from './MediaSubmission.jsx';
+import SubmitMedia from './SubmitMedia.jsx';
 import Submission from './Submission.jsx';
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <MediaSubmission />
+        <SubmitMedia />
         
         <ul className="submission-list">
           {this.renderSubmissions()}

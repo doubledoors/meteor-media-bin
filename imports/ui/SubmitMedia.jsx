@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MediaSubmission extends Component {
+export default class SubmitMedia extends Component {
   constructor() {
     super();
   }
@@ -17,8 +17,8 @@ export default class MediaSubmission extends Component {
   
   render() {
     return (
-      <div className="MediaSubmission">
-        <form className="MediaSubmission__form" onSubmit={this.handleSubmit.bind(this)} >
+      <div className="SubmitMedia">
+        <form className="SubmitMedia__form" onSubmit={this.handleSubmit.bind(this)} >
           <input
             type="text"
             ref="textInput"

@@ -25,12 +25,12 @@ header h1 {
   font-size: 1.6rem;
 }
 
-.MediaSubmission {
+.SubmitMedia {
   padding: 20px 20px;
   background-color: #fff;
 }
 
-.MediaSubmission__form input {
+.SubmitMedia__form input {
   box-sizing: border-box;
   background: transparent;
   border: none;
@@ -40,7 +40,7 @@ header h1 {
   color: #2c3e50;
 }
 
-.MediaSubmission__form input:focus{
+.SubmitMedia__form input:focus{
   outline: 0;
 }
 
