@@ -39,7 +39,7 @@ header h1 {
   background-color: #fff;
 }
 
-.SubmitMedia__form input {
+.SubmitMedia form input {
   box-sizing: border-box;
   background: transparent;
   border: none;
@@ -49,10 +49,10 @@ header h1 {
   color: #2c3e50;
 }
 
-.SubmitMedia__form input:focus{
+.SubmitMedia form input:focus{
   outline: 0;
 }
 
-.Submission button {
+.Entry button {
   margin: 10px 0;
 }

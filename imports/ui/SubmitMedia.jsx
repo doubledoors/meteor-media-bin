@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Submissions } from '../api/submissions.js';
+import { Entries } from '../api/entries.js';
 
 export default class SubmitMedia extends Component {
   constructor() {
@@ -24,7 +24,7 @@ export default class SubmitMedia extends Component {
     { yt_video_id 
       ?
         // Insert into db ...
-        Submissions.insert({
+        Entries.insert({
           yt_video_id, // YouTube video id
           createdAt: new Date(), // current time
         })
@@ -39,7 +39,7 @@ export default class SubmitMedia extends Component {
   render() {
     return (
       <div className="SubmitMedia">
-        <form className="SubmitMedia__form" onSubmit={this.handleSubmit.bind(this)} >
+        <form onSubmit={this.handleSubmit.bind(this)} >
           <input
             type="text"
             ref="textInput"
