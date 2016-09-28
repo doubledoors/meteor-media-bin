@@ -10,7 +10,7 @@ export default class Entry extends Component {
   }
   
   deleteThisEntry() {
-    Entries.remove(this.props.entries._id);
+    Entries.remove(this.props.entry._id);
   }
   
   render() {

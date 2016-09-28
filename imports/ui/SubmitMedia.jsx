@@ -43,7 +43,7 @@ export default class SubmitMedia extends Component {
           <input
             type="text"
             ref="textInput"
-            placeholder="Add a link ..."
+            placeholder="Paste a YouTube link e.g. https://www.youtube.com/watch?v=blpe_sGnnP4"
           />
         </form>
       </div>

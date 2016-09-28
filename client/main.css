@@ -13,13 +13,10 @@ body {
 }
 
 #app ul {
+  padding: 40px 0;
   list-style: none;
-  padding: 20px 0 0 20px;
-  margin: 0;
-}
-
-#app ul li {
-  margin-bottom: 20px;
+  width: 640px;
+  margin: 0 auto;
 }
 
 header {
@@ -53,6 +50,16 @@ header h1 {
   outline: 0;
 }
 
+.Entry {
+  margin: 40px 0;
+}
+
+.Entry:first-child {
+  margin-top: 0;
+}
+
 .Entry button {
-  margin: 10px 0;
+  position: relative;
+  left: 100%;
+  margin: 0 0 10px -24px;
 }
