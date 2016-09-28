@@ -14,7 +14,7 @@ export default class YouTubePlayer extends Component {
     };
 
     return(
-      <div className="Video">
+      <div className="YouTubePlayer">
         <YouTube
           videoId={this.props.videoId}
           opts={opts}

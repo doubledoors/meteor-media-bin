@@ -64,14 +64,14 @@ header h1 {
   margin: 0 0 10px -24px;
 }
 
-.Video {
+.YouTubePlayer {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
 }
 
-.Video span iframe {
+.YouTubePlayer span iframe {
   position: absolute;
   top: 0;
   left: 0;
