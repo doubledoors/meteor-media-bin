@@ -10,7 +10,7 @@ export default class SubmitMedia extends Component {
   
   handleSubmit(event) {
     event.preventDefault();
-    // Find the text field via the React ref
+    // Find the text field via the React ref, get value and for now pass it as ytv_id (YouTube video id into the db).
     const ytv_id = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
     // Insert into db ...
     Submissions.insert({
