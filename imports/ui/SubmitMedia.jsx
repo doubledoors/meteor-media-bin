@@ -17,19 +17,19 @@ export default class SubmitMedia extends Component {
   handleSubmit(event) {
     event.preventDefault();
     
-    // Pass the text input value into the validateYouTubeURL method, if it is a valid YouTube url, assign ytvideo_id the extracted video id. If it's not, assign it 'false'.
-    const ytvideo_id = this.validateYouTubeURL(ReactDOM.findDOMNode(this.refs.textInput).value.trim());
+    // Pass the text input value into the validateYouTubeURL method, if it is a valid YouTube url, assign yt_video_id the extracted video id. If it's not, assign it 'false'.
+    const yt_video_id = this.validateYouTubeURL(ReactDOM.findDOMNode(this.refs.textInput).value.trim());
     
     // If we have a valid id
-    if(ytvideo_id) {
-      // Insert into db ...
-      Submissions.insert({
-        ytvideo_id, // YouTube video id
-        createdAt: new Date(), // current time
-      });
-    }else{
-      // Invalid link
-      alert('invalid link my son');
+    { yt_video_id 
+      ?
+        // Insert into db ...
+        Submissions.insert({
+          yt_video_id, // YouTube video id
+          createdAt: new Date(), // current time
+        })
+        // Invalid link
+      : alert('invalid link my son');
     }
     
     // Clear form
