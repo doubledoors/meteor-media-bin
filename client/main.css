@@ -12,10 +12,19 @@ body {
   font-size: 14px;
 }
 
+#app ul {
+  list-style: none;
+  padding: 20px 0 0 20px;
+  margin: 0;
+}
+
+#app ul li {
+  margin-bottom: 20px;
+}
+
 header {
   margin: 0;
   padding: 20px 0;
-
   color: #fff;
 }
 
@@ -44,12 +53,6 @@ header h1 {
   outline: 0;
 }
 
-.App__submission-list {
-  list-style: none;
-  padding: 20px 0 0 20px;
-  margin: 0;
-}
-
-.App__submission-list li {
-  margin-bottom: 20px;
+.Submission button {
+  margin: 10px 0;
 }
