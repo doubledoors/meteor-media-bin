@@ -8,15 +8,29 @@ export default class SubmitMedia extends Component {
     super();
   }
   
+  validateYouTubeURL(url) {
+    // Praise be to this man for this YouTube REGEX http://stackoverflow.com/questions/2964678/jquery-youtube-url-validation-with-regex/10315969#10315969
+    const p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+    return (url.match(p)) ? RegExp.$1 : false;
+  }
+  
   handleSubmit(event) {
     event.preventDefault();
-    // Find the text field via the React ref, get value and for now pass it as ytv_id (YouTube video id into the db).
-    const ytv_id = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-    // Insert into db ...
-    Submissions.insert({
-      ytv_id,
-      createdAt: new Date(), // current time
-    });
+    
+    // Pass the text input value into the validateYouTubeURL method, if it is a valid YouTube url, assign ytvideo_id the extracted video id. If it's not, assign it 'false'.
+    const ytvideo_id = this.validateYouTubeURL(ReactDOM.findDOMNode(this.refs.textInput).value.trim());
+    
+    // If we have a valid id
+    if(ytvideo_id) {
+      // Insert into db ...
+      Submissions.insert({
+        ytvideo_id, // YouTube video id
+        createdAt: new Date(), // current time
+      });
+    }else{
+      // Invalid link
+      alert('invalid link my son');
+    }
     
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
@@ -25,7 +39,7 @@ export default class SubmitMedia extends Component {
   render() {
     return (
       <div className="SubmitMedia">
-        <form className="SubmitMedia__form"     onSubmit={this.handleSubmit.bind(this)} >
+        <form className="SubmitMedia__form" onSubmit={this.handleSubmit.bind(this)} >
           <input
             type="text"
             ref="textInput"

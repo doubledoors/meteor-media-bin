@@ -19,7 +19,7 @@ export default class Submission extends Component {
         <button className="delete" onClick={this.deleteThisSubmission.bind(this)}>
           &times;
         </button>
-        <YouTubePlayer videoId={this.props.submission.ytv_id} />
+        <YouTubePlayer videoId={this.props.submission.ytvideo_id} />
       </li>
     );
   }
