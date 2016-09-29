@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import { Meteor } from 'meteor/meteor';
+
 import { Entries } from '../api/entries.js';
 
 export default class SubmitMedia extends Component {
@@ -27,6 +29,8 @@ export default class SubmitMedia extends Component {
         Entries.insert({
           yt_video_id, // YouTube video id
           createdAt: new Date(), // current time
+          owner: Meteor.userId(), // _id of logged in user
+          username: Meteor.user().username, // username of logged in user
         })
         // Invalid link
       : alert('invalid link my son');
@@ -38,14 +42,18 @@ export default class SubmitMedia extends Component {
   
   render() {
     return (
-      <div className="SubmitMedia">
-        <form onSubmit={this.handleSubmit.bind(this)} >
-          <input
-            type="text"
-            ref="textInput"
-            placeholder="Paste a YouTube link e.g. https://www.youtube.com/watch?v=blpe_sGnnP4"
-          />
-        </form>
+      <div>
+        { this.props.currentUser ?
+          <div className="SubmitMedia">
+            <form onSubmit={this.handleSubmit.bind(this)} >
+              <input
+                type="text"
+                ref="textInput"
+                placeholder="Paste a YouTube link e.g. https://www.youtube.com/watch?v=blpe_sGnnP4"
+              />
+            </form>
+          </div> : ''
+        }
       </div>
     );
   }
