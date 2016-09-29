@@ -13,13 +13,17 @@ class App extends Component {
       <Entry key={entry._id} entry={entry} />
     ));
   }
+  
+  loadMoreEntries() {
+    
+  }
 
   render() {
     return (
       <div>
+        
         <Header />
         <SubmitMedia />
-        
         <ul>
           {this.renderEntries()}
         </ul>
