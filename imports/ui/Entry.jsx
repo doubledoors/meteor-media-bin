@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 import { Entries } from '../api/entries.js';
 
@@ -13,9 +14,13 @@ export default class Entry extends Component {
     Entries.remove(this.props.entry._id);
   }
   
+  componentDidMount() {
+    ReactDOM.findDOMNode(this.refs.entryLi).className += " fade-in";
+  }
+  
   render() {
     return (
-      <li className="Entry">
+      <li ref="entryLi" className="Entry">
         <button className="delete" onClick={this.deleteThisEntry.bind(this)}>
           &times;
         </button>

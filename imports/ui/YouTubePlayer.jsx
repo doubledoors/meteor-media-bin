@@ -18,13 +18,13 @@ export default class YouTubePlayer extends Component {
         <YouTube
           videoId={this.props.videoId}
           opts={opts}
-          onReady={this._onReady}
+          onReady={this.onReady}
         />
       </div>
     );
   }
 
-  _onReady(event) {
+  onReady(event) {
     // access to player in all event handlers via event.target
     // For example:
     // event.target.pauseVideo();
