@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
+import { Meteor } from 'meteor/meteor';
+
 import { Entries } from '../api/entries.js';
 
 import YouTubePlayer from './YouTubePlayer.jsx';
@@ -11,7 +13,7 @@ export default class Entry extends Component {
   }
   
   deleteThisEntry() {
-    Entries.remove(this.props.entry._id);
+    Meteor.call('entries.remove', this.props.entry._id);
   }
   
   componentDidMount() {

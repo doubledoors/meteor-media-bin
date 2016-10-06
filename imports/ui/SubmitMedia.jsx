@@ -26,12 +26,7 @@ export default class SubmitMedia extends Component {
     { yt_video_id 
       ?
         // Insert into db ...
-        Entries.insert({
-          yt_video_id, // YouTube video id
-          createdAt: new Date(), // current time
-          owner: Meteor.userId(), // _id of logged in user
-          username: Meteor.user().username, // username of logged in user
-        })
+        Meteor.call('entries.insert', yt_video_id)
         // Invalid link
       : alert('invalid link my son');
     }
