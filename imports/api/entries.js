@@ -15,7 +15,7 @@ Meteor.methods({
   'entries.insert'(yt_video_id) {
     check(yt_video_id, String);
  
-    // Make sure the user is logged in before inserting a task
+    // Make sure the user is logged in before inserting an entry
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -29,6 +29,12 @@ Meteor.methods({
   },
   'entries.remove'(entryId) {
     check(entryId, String);
+
+    const entry = Entries.findOne(entryId);
+    
+    if (entry.owner !== this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
  
     Entries.remove(entryId);
   },
