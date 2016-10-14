@@ -27,7 +27,7 @@ export default class Entry extends Component {
           &times;
         </button>
         <YouTubePlayer videoId={this.props.entry.yt_video_id} />
-        <p>posted by: <strong>{this.props.entry.username}</strong></p>
+        <p>posted by: <strong>{this.props.entry.username}</strong> <span className="created-at">({moment(this.props.entry.createdAt).fromNow()})</span></p>
       </li>
     );
   }
